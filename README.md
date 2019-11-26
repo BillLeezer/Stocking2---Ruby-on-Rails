@@ -1,4 +1,6 @@
+
 # README: Stocking2---Ruby-on-Rails
+
 
 This is a Ruby on Rails app program, astock market utility app.    				by: Bill Leezer
 
