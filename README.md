@@ -28,7 +28,7 @@ Things you may want to cover:
 * Having trouble saving and uploads with GitHub .com 
 # Stocking
 
-Having discovered:
+Having discovered:  11/26/2019
  Git desktop
  Git Gui
  and how to restore deleted repositories,
