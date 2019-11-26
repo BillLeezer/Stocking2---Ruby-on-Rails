@@ -1,6 +1,8 @@
-# README
+# README: Stocking2---Ruby-on-Rails
 
-This README would normally document whatever steps are necessary to get the
+This is a Ruby on Rails app program, astock market utility app.    				by: Bill Leezer
+
+Document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
