@@ -32,6 +32,8 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'jquery-rails'
 # stock_quote 3.0.0
 gem "stock_quote", '~> 3.0.0'
+# devise 4.7.1
+gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

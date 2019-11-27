@@ -1,11 +1,18 @@
-<!--  in apps/views/home/index.html.erb  -->
+<h1>Stocking</h1>
 
-<h1>Stocking - Home#index</h1>
+<%= form_tag root_path, :method => 'POST' do %>
+	<%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+	<%= submit_tag 'Lookup' %>
+<% end %>
 
-<p>Okay, firt attemp at modifying index/home page.</p>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if @stock %>
+	 <br/>Company:<%= @stock.company_name %><br/>
+	 Latest Price: $<%= @stock.latest_price %><br/><br/>
+	 All stock info:<%= @stock.inspect %>
+<% elsif @nothing %>
+	<%= @nothing %>
+<% end %>
 
-
-<!--  % StockQuote::Stock.new(api_key: 'pk_d26d923c6b6e41648be7487d7f41b027') %  -->
-<% stock = StockQuote::Stock.quote("fb") %>
-<%=  stock.inspect %>
+<% if @error %>
+	<%= @error %>
+<% end %>
