@@ -1,7 +1,12 @@
+<!--  in app/views/layouts/application.html.erb   -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Stocking</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +14,16 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render 'home/navbar' %>
+	
+   <div class="container">
+    <br/>
+    	<%= yield %>
+	 </div>
+
+    <%= render 'home/footer' %>
+	
+
   </body>
 </html>
