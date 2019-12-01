@@ -7,6 +7,7 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.json
   def index
+    @api = StockQuote::Stock.new(api_key: 'pk_d26d923c6b6e41648be7487d7f41b027')
     @stocks = Stock.all
   end
 
@@ -65,7 +66,7 @@ class StocksController < ApplicationController
   end
 
   def correct_user
-    @ticker = correct_user.stocks.find_by(id: params[:id])
+    @ticker = current_user.stocks.find_by(id: params[:id])
     redirect_to stocks_path, notice: "Not Authorized to edit this stock" if @ticker.nil?
   end
     
