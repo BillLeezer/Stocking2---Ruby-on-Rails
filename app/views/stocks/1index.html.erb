@@ -1,8 +1,7 @@
 
-<%  @api = StockQuote::Stock.new(api_key: 'pk_d26d923c6b6e41648be7487d7f41b027') %>
+
 
 <h1>Stocks</h1>
-<br/>
 
 <table table class="table table-bordered table-hover">
   <thead class="thead-light">
@@ -18,18 +17,18 @@
   <tbody>
     <% @stocks.each do |stock| %>
       <% if stock.user_id == current_user.id %>
-
-	     <% @ticker = StockQuote::Stock.quote(stock.ticker) %>
+     
+      <% @ticker = StockQuote::Stock.quote(@stock.ticker) %>
       
-	      <% if !@ticker %>
-	        <tr>
-	          <td><%= link_to "Error", stock %></td>
-	          <td><%= stock.ticker %></td>
-	          <td>N/A</td>  
-	          <td>N/A</td>
-	          <td><center><%= link_to 'Edit', edit_stock_path(stock) %></center></td>
-	          <td><center><%= link_to 'Delete', stock, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
-	        </tr>
+      <% if !@ticker %>
+        <tr>
+          <td><%= link_to "Error", stock %></td>
+          <td><%= stock.ticker %></td>
+          <td>N/A</td>  
+          <td>N/A</td>
+          <td><center><%= link_to 'Edit', edit_stock_path(stock) %></center></td>
+          <td><center><%= link_to 'Delete', stock, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
+        </tr>
 
       <% else %>
 
