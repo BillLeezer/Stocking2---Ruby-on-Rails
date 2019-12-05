@@ -10,7 +10,10 @@
       <th>Company</th>
       <th>Ticker</th>
       <th>Current Price</th>
+      <th>Previous Close</th>
       <th>Market Cap</th>
+      <th>52 Week High</th>
+      <th>52 Week Low</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -39,8 +42,14 @@
           <td><%= @ticker.symbol %></td>
 
           <td>$<%= number_with_precision(@ticker.latest_price, :precision => 2, :delimiter => ',') %></td>
+
+          <td>$<%= number_with_precision(@ticker.previous_close, :precision => 2, :delimiter => ',') %></td>
          
           <td>$<%= number_with_precision(@ticker.market_cap, :precision => 2, :delimiter => ',') %></td>
+
+          <td>$<%= number_with_precision(@ticker.week52_high, :precision => 2, :delimiter => ',') %><br/>
+
+          <td>$<%= number_with_precision(@ticker.week52_low, :precision => 2, :delimiter => ',') %><br/>
 
           <td><center><%= link_to 'Edit', edit_stock_path(stock), class: 'btn btn-light' %></center></td>
 
